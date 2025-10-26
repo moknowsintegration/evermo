@@ -16,6 +16,7 @@ import SpecializedServices from "./pages/SpecializedServices";
 import Industries from "./pages/Industries";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
+import Marketplace from "./pages/Marketplace";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/industries" element={<Industries />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/marketplace" element={<Marketplace />} />
           </Routes>
         </main>
         <Footer />
