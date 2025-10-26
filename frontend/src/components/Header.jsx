@@ -160,6 +160,9 @@ const Header = () => {
               <Link to="/resources" className="text-sm font-medium text-[#6B7280] hover:text-[#1E3A8A]">
                 Resources
               </Link>
+              <Link to="/marketplace" className="text-sm font-medium text-[#6B7280] hover:text-[#1E3A8A]">
+                Marketplace
+              </Link>
               <Link to="/contact" className="text-sm font-medium text-[#6B7280] hover:text-[#1E3A8A]">
                 Contact
               </Link>
