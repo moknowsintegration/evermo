@@ -187,14 +187,25 @@ const Resources = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-[#6B7280] mb-4">{resource.description}</p>
-                  <Button
-                    variant="outline"
-                    className="w-full border-[#1E3A8A] text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white"
-                    onClick={() => handleDownload(resource.title)}
-                  >
-                    <Download className="mr-2 h-4 w-4" />
-                    Download
-                  </Button>
+                  {resource.type === 'google-sheet' ? (
+                    <Button
+                      variant="outline"
+                      className="w-full border-[#1E3A8A] text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white"
+                      onClick={() => handleDownload(resource)}
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Access Resource
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="outline"
+                      className="w-full border-[#1E3A8A] text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white"
+                      onClick={() => handleDownload(resource)}
+                    >
+                      <Download className="mr-2 h-4 w-4" />
+                      Download
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
