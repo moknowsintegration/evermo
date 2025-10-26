@@ -20,27 +20,37 @@ const Resources = () => {
     {
       icon: Calendar,
       title: '2025 Tax Calendar and Deadlines',
-      description: 'Important federal and state tax deadlines, quarterly estimated tax due dates, and annual filing requirements.'
+      description: 'Important federal and state tax deadlines, quarterly estimated tax due dates, and annual filing requirements.',
+      type: 'pdf', // Will be a PDF download
+      filename: '2025-tax-calendar.pdf'
     },
     {
       icon: FileText,
       title: 'STR Classification Checklist',
-      description: 'Determine if your property qualifies for STR treatment, average rental period calculations, and material participation requirements.'
+      description: 'Determine if your property qualifies for STR treatment, average rental period calculations, and material participation requirements.',
+      type: 'pdf',
+      filename: 'str-classification-checklist.pdf'
     },
     {
       icon: Calculator,
       title: 'Cost Segregation Calculator',
-      description: 'Estimate potential tax savings, property type considerations, and ROI on cost segregation study.'
+      description: 'Estimate potential tax savings, property type considerations, and ROI on cost segregation study.',
+      type: 'pdf',
+      filename: 'cost-segregation-calculator.pdf'
     },
     {
       icon: FileText,
       title: 'Payroll Compliance Guide',
-      description: 'Multi-state payroll requirements, tax withholding checklist, and common payroll mistakes to avoid.'
+      description: 'Multi-state payroll requirements, tax withholding checklist, and common payroll mistakes to avoid.',
+      type: 'pdf',
+      filename: 'payroll-compliance-guide.pdf'
     },
     {
       icon: Building2,
       title: 'Home Care Licensing Requirements by State',
-      description: 'State-by-state licensing overview, application process timelines, and common requirements checklist.'
+      description: 'State-by-state licensing overview, application process timelines, and common requirements checklist. Updated regularly.',
+      type: 'google-sheet', // External link to Google Sheet
+      externalLink: 'https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit' // Replace with your actual Google Sheet link
     }
   ];
 
