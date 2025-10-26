@@ -24,8 +24,8 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-[#1E3A8A]">EverMo</span>
-              <span className="text-sm font-medium text-[#6B7280] -mt-1">Solutions</span>
+              <span className="text-3xl md:text-4xl font-bold text-[#1E3A8A]">EverMo</span>
+              <span className="text-base md:text-lg font-medium text-[#6B7280] -mt-1">Solutions</span>
             </div>
           </Link>
 
