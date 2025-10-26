@@ -113,8 +113,47 @@ const Resources = () => {
     ]
   };
 
-  const handleDownload = (title) => {
-    toast.info(`Downloading ${title}... (Resource will be available soon)`);
+  const handleDownload = (resource) => {
+    if (resource.type === 'google-sheet') {
+      // For Google Sheets, open lead capture modal
+      setSelectedResource(resource);
+      setDialogOpen(true);
+    } else {
+      // For PDFs, open lead capture modal
+      setSelectedResource(resource);
+      setDialogOpen(true);
+    }
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    
+    // Here you would typically send this to your backend to save the lead
+    console.log('Lead captured:', {
+      ...formData,
+      resource: selectedResource.title,
+      timestamp: new Date().toISOString()
+    });
+
+    if (selectedResource.type === 'google-sheet') {
+      // Open Google Sheet in new tab
+      window.open(selectedResource.externalLink, '_blank');
+      toast.success(`Access granted! Opening ${selectedResource.title}...`);
+    } else {
+      // Trigger PDF download
+      // Note: You'll need to place actual PDF files in /public/downloads/ folder
+      const link = document.createElement('a');
+      link.href = `/downloads/${selectedResource.filename}`;
+      link.download = selectedResource.filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      toast.success(`Thank you! Downloading ${selectedResource.title}...`);
+    }
+
+    // Reset form and close dialog
+    setFormData({ name: '', email: '', company: '' });
+    setDialogOpen(false);
   };
 
   return (
