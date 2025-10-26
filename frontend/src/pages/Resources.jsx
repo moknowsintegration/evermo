@@ -1,11 +1,21 @@
-import React from 'react';
-import { Download, Calendar, Calculator, FileText, Building2, ChevronDown } from 'lucide-react';
+import React, { useState } from 'react';
+import { Download, Calendar, Calculator, FileText, Building2, ExternalLink } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '../components/ui/dialog';
+import { Input } from '../components/ui/input';
+import { Label } from '../components/ui/label';
 import { toast } from 'sonner';
 
 const Resources = () => {
+  const [selectedResource, setSelectedResource] = useState(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: ''
+  });
   const resources = [
     {
       icon: Calendar,
