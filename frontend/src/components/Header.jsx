@@ -94,6 +94,14 @@ const Header = () => {
               Resources
             </Link>
             <Link
+              to="/marketplace"
+              className={`text-sm font-medium hover:text-[#1E3A8A] ${
+                isActive('/marketplace') ? 'text-[#1E3A8A]' : 'text-[#6B7280]'
+              }`}
+            >
+              Marketplace
+            </Link>
+            <Link
               to="/contact"
               className={`text-sm font-medium hover:text-[#1E3A8A] ${
                 isActive('/contact') ? 'text-[#1E3A8A]' : 'text-[#6B7280]'
