@@ -285,6 +285,66 @@ const Resources = () => {
           </Button>
         </div>
       </section>
+
+      {/* Lead Capture Dialog */}
+      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-[#1F2937]">
+              Get Your Free Resource
+            </DialogTitle>
+            <DialogDescription className="text-[#6B7280]">
+              Enter your information below to access: <strong>{selectedResource?.title}</strong>
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleFormSubmit} className="space-y-4 mt-4">
+            <div>
+              <Label htmlFor="lead-name">Full Name *</Label>
+              <Input
+                id="lead-name"
+                required
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                placeholder="John Doe"
+                className="mt-1"
+              />
+            </div>
+            <div>
+              <Label htmlFor="lead-email">Email Address *</Label>
+              <Input
+                id="lead-email"
+                type="email"
+                required
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                placeholder="john@example.com"
+                className="mt-1"
+              />
+            </div>
+            <div>
+              <Label htmlFor="lead-company">Company Name (Optional)</Label>
+              <Input
+                id="lead-company"
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                placeholder="Your Company"
+                className="mt-1"
+              />
+            </div>
+            <p className="text-xs text-[#6B7280]">
+              By submitting this form, you agree to receive communications from EverMo Solutions. 
+              We respect your privacy and will never share your information.
+            </p>
+            <Button
+              type="submit"
+              className="w-full bg-[#F59E0B] hover:bg-[#D97706] text-white font-semibold"
+              size="lg"
+            >
+              {selectedResource?.type === 'google-sheet' ? 'Access Resource' : 'Download Now'}
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
