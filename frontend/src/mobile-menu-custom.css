@@ -1,0 +1,34 @@
+/* Bigger hamburger icon */
+button[aria-label*="menu"],
+button[aria-label*="Menu"],
+.mobile-menu-button,
+[class*="hamburger"],
+[class*="Hamburger"] {
+  width: 56px !important;
+  height: 56px !important;
+  padding: 12px !important;
+}
+
+/* Bigger icon lines */
+button[aria-label*="menu"] svg,
+button[aria-label*="Menu"] svg {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Wider mobile menu panel */
+nav[class*="mobile"],
+div[class*="mobile-menu"],
+div[class*="MobileMenu"] {
+  width: 90vw !important;
+  max-width: 450px !important;
+}
+
+/* Bigger menu items */
+nav[class*="mobile"] a,
+div[class*="mobile-menu"] a,
+div[class*="MobileMenu"] a {
+  font-size: 22px !important;
+  padding: 20px 28px !important;
+  line-height: 1.6 !important;
+}

@@ -1,0 +1,22 @@
+/* Make hamburger icon bigger */
+button[aria-label*="menu"],
+.mobile-menu-button,
+[class*="hamburger"] {
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 32px !important;
+}
+
+/* Make mobile menu panel wider and bigger */
+[class*="mobile-menu"],
+[class*="MobileMenu"] {
+  width: 85vw !important;
+  max-width: 400px !important;
+}
+
+/* Make menu items bigger */
+[class*="mobile-menu"] a,
+[class*="MobileMenu"] a {
+  font-size: 20px !important;
+  padding: 16px 24px !important;
+}
